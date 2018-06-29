@@ -8,14 +8,12 @@ function Calculate(num) {
         return total;
     };
     this.minus = function() {
-        let result = 0;
-        let min = 0;
-
+        let result = this.num[0];
+        
         for (let i = 1; i < this.num.length; i += 1) {
-            min = num[i - 1] - num[i];
-            result = num[i] = min;
-
+            result -= this.num[i];
         }
+        
         return result;
     }
 
