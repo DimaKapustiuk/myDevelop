@@ -112,9 +112,9 @@ const paintCards = cards => {
 
 paintCards(posts);
 
-const inputs = document.querySelector('.inputs');
-const arr = Array.from(inputs.children);
-const btn = document.querySelector('.button');
+const inputs = document.querySelectorAll('.user-input');
+const arr = Array.from(inputs);
+const btn = document.querySelector('.btn');
 btn.addEventListener('click', () => {
   const userInput = arr.map(elem => elem.value);
   const newPost = new Posted(...userInput);
