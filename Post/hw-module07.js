@@ -114,7 +114,7 @@ paintCards(posts);
 
 const inputs = document.querySelectorAll('.user-input');
 const arr = Array.from(inputs);
-const btn = document.querySelector('.btn');
+const btn = document.querySelector('.button');
 btn.addEventListener('click', () => {
   const userInput = arr.map(elem => elem.value);
   const newPost = new Posted(...userInput);
