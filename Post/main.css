@@ -33,6 +33,10 @@ body {
   align-items: center;
    flex-flow: column nowrap;
 }
+.inputs:first-child{
+  background: red;
+  width: 500px;
+}
 
 img {
   display: block;
