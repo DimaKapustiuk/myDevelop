@@ -118,7 +118,6 @@ const btn = document.querySelector('.button');
 btn.addEventListener('click', () => {
   const userInput = arr.map(elem => elem.value);
   const newPost = new Posted(...userInput);
-  console.log(newPost.image)
   createUserInput(newPost);
   console.log(newPost)
 
