@@ -33,7 +33,7 @@ const posts = [{
 ];
 
 function Posted (image, title, text, link) {
-    this.image = image;
+    this.img = image;
     this.title = title;
     this.text = text;
     this.link = link;
@@ -118,9 +118,9 @@ const btn = document.querySelector('.button');
 btn.addEventListener('click', () => {
   const userInput = arr.map(elem => elem.value);
   const newPost = new Posted(...userInput);
+  console.log(newPost.image)
   createUserInput(newPost);
   console.log(newPost)
 
-}
-  );
+});
 
