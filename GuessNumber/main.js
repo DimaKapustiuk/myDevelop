@@ -40,6 +40,9 @@ function arrayValueInputs() {
   const inputsObj = Array.from(userInput);
   const inputValue = inputsObj.map(input => input.value);
   
+  if(inputValue[2] !== 'Решка' && inputValue[2] !== 'Орел') {
+    inputValue[2] = 'Орел';
+  }
 
   return inputValue;
 }
