@@ -38,14 +38,8 @@ function handleKeyCloseModal(event) {
 
 function arrayValueInputs() {
   const inputsObj = Array.from(userInput);
-  const inputValue = inputsObj.map(input => {
-    const value = input.value;
-
-    if(value > 10) {
-     return 'Введенное число не коректно!';
-    }
-    return value;
-  });
+  const inputValue = inputsObj.map(input => input.value);
+  
 
   return inputValue;
 }
@@ -67,11 +61,11 @@ function paintUserObj ({name, slogan, number}) {
   const resultText = `<div class="resultWrapper">
       <h3>Привет: ${name}</h3>
       <p>Ваш девиз: ${slogan}</p>
-      <p>Ваше число: ${number}</p>
-      <p>Сгенерированое число: ${randNumber}</p>
+      <p>Ваш выбор: ${number}</p>
+      <p>Результат: ${randNumber}</p>
     </div>`;
 
-    if (+number !== randNumber) {
+    if (number !== randNumber) {
       congrats.style.color = 'red';
      congrats.textContent = 'Сожалеем вы не угадали'
     } else {
@@ -84,8 +78,9 @@ function paintUserObj ({name, slogan, number}) {
 }
 
 function randomNumber () {
-  const number = Math.floor((Math.random() * 10) + 1);
+  const arrText = ['Орел', 'Решка']
+  const number = Math.floor((Math.random() * arrText.length));
 
-  return number;
+  return arrText[number];
 }
 
