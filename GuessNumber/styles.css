@@ -1,0 +1,106 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+.wrapper {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: center;
+	-ms-align-items: center;
+	align-items: center;
+	flex-flow: column wrap;
+}
+.page.show-modal .backdrop {
+  display: flex;
+}
+
+.btn {
+ 	margin: 0 4px;
+  padding: 8px 32px;
+  font-family: inherit;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 2px;
+  font-weight: 500;
+  text-transform: uppercase;
+  background: none;
+}
+.close {
+	  width: 45px;
+    height: 45px;
+    background-image: url(https://image.flaticon.com/icons/png/512/64/64146.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: transform 0.1s linear;
+
+}
+
+.btn:hover {
+	background: rgba(0, 0, 0, 0.2);
+}
+.close:hover {
+	transform: rotate(90deg);
+}
+
+.backdrop {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.modal {
+  width: 500px;
+  min-height: 200px;
+  padding: 16px;
+  background-color: #fff;
+  border-radius: 2px;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: center;
+  -ms-align-items: center;
+  align-items: center;
+  flex-flow: column;
+}
+
+.resultWrapper {
+	margin-top: 40px;
+
+}
+
+.resultWrapper{
+	font-size: 30px;
+}
+
+.congratulations {
+	font-size: 50px;
+	margin-top: 20px;
+}
+.form-name-input {
+	margin-top: 5px;
+	font-size: 20px;
+}
+
+.user-input{
+	width: 250px;
+  padding: 5px;
+  outline: none;
+  border-radius: 7px;
+  border: 1px solid;
+  margin-top: 5px;
+}   

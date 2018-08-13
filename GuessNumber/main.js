@@ -1,70 +1,91 @@
-/***ЗАДАНИЕ ПОВЫШЕНОЙ СЛОЖНОСТИ***
-  
-  Создайте игру угадай число.
-  
-  Есть массив чисел numbers, содержащий "верные" числа.
-  Числа в массиве всегда идут по возрастанию, 1-5, 20-40, 2-100 и т.п.
-  
-  Просим пользователя ввести цифру от самого маленького,
-  до самого большого элемента массива. Эти значения необходимо
-  сохранить в переменные min и max. Учтите что массив произвольный,
-  но элементы всегда идут по возрастанию.
-  
-  Пусть prompt говорит "Введите цифру между x и y", где x и y 
-  соотвественно самый маленький и самый большой элемент массива.
-  
-  Но пользователь может ввести что угодно, необходимо проверить 
-  что было введено. Преобразовать input в числовой тип и проверить 
-  число ли это.
-  
-    - Если не число - выводим alert с сообщением о том, что было 
-      введено не число.
-    - Если число - проверить содержит ли в себе массив numbers это число.
-    - Если содержит - выводим alert с сообщением 'Поздравляем, Вы угадали!'.
-    - Есл не содержит - выводим alert с сообщением 'Сожалеем, Вы не угадали!'.
-*/
+const page = document.querySelector('.page');
+const openModalBtn = document.querySelector('button[data-action="open-modal"]');
+const closeModalBtn = document.querySelector('.close[data-action="close-modal"]');
+const submitForm = document.querySelector('.js-user-data');
+const userInput = document.querySelectorAll('.user-input');
+const wrapperBlock = document.querySelector('.wrapper');
+const congrats = document.querySelector('.congratulations')
+let user;
 
-let arr = [];
-let userInput;
-let userNumber;
-
-do {
-    userInput = prompt("Число которое хотите УГАДАТЬ! P.S: Число = Длине масива!", 10);
-    userNumber = Number.parseInt(userInput);
-    if (userInput === null) {
-        alert("Отменено пользователем!");
-        break;
-    } else if (Number.isNaN(userNumber)) {
-        alert("Введено не число, введите пожалуйста число!")
-    } else {
-        randArr(userNumber);
-    }
-} while (Number.isNaN(userNumber));
-
-
-function randArr(number) {
-    let a;
-    for (let i = 0; i < number; i++) {
-        a = Math.floor(Math.random() * (number * 2));
-        if (arr.includes(a) === false) {
-            arr.push(a);
-        }
-    }
-
-    function compareNumeric(a, b) {
-        if (a > b) return 1;
-        if (a < b) return -1;
-    }
-    arr.sort(compareNumeric);
-    whatNumber();
+openModalBtn.addEventListener('click', handleOpenModal);
+closeModalBtn.addEventListener('click', handleCloseModal);
+submitForm.addEventListener('submit', handleSubmit)
+function User (name, slogan, number) {
+  this.name = name;
+  this.slogan = slogan;
+  this.number = number;
 }
 
-function whatNumber() {
-    if (arr.includes(userNumber)) {
-        alert("Поздравляем!!! Вы угадали такое число есть!");
-    } else {
-        alert("Сожалеем такого числа нет! Вы не угадали!");
-    }
+function handleOpenModal() {
+  page.classList.add('show-modal');
 
-    alert(`Ваш масив: ${arr}`);
+  window.addEventListener('keydown', handleKeyCloseModal);
 }
+
+function handleCloseModal() {
+  page.classList.remove('show-modal');
+
+  window.removeEventListener('keydown', handleKeyCloseModal);
+}
+
+function handleKeyCloseModal(event) {
+  const code = event.code;
+
+  if(code !== 'Escape') return;
+
+  handleCloseModal();
+}
+
+function arrayValueInputs() {
+  const inputsObj = Array.from(userInput);
+  const inputValue = inputsObj.map(input => {
+    const value = input.value;
+
+    if(value > 10) {
+     return 'Введенное число не коректно!';
+    }
+    return value;
+  });
+
+  return inputValue;
+}
+
+function handleSubmit(evt) {
+  evt.preventDefault();
+  const inputValue = arrayValueInputs();
+  user = new User(...inputValue);
+
+  handleCloseModal();
+  paintUserObj(user);
+
+  submitForm.reset();
+}
+
+
+function paintUserObj ({name, slogan, number}) {
+  const randNumber = randomNumber();
+  const resultText = `<div class="resultWrapper">
+      <h3>Привет: ${name}</h3>
+      <p>Ваш девиз: ${slogan}</p>
+      <p>Ваше число: ${number}</p>
+      <p>Сгенерированое число: ${randNumber}</p>
+    </div>`;
+
+    if (+number !== randNumber) {
+      congrats.style.color = 'red';
+     congrats.textContent = 'Сожалеем вы не угадали'
+    } else {
+      congrats.style.color = 'green';
+      congrats.textContent = 'Ура ви угадали!'
+    }
+  
+  wrapperBlock.insertAdjacentHTML('beforeend', resultText);
+  openModalBtn.textContent = 'Попробуй еще';
+}
+
+function randomNumber () {
+  const number = Math.floor((Math.random() * 10) + 1);
+
+  return number;
+}
+

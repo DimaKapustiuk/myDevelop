@@ -1,10 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Guess Number</title>
+    <meta charset="UTF-8">
+    <title>Guess Number</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-	<script src="main.js"></script>
+
+<body class="page">
+	<div class="wrapper">
+    <h1 class="title">Угадай Число от 1 до 10</h1>
+    <button class="btn" data-action='open-modal'>Попробовать</button>
+
+
+    <div class="backdrop">
+        <div class="modal">
+        	<div class="close" data-action='close-modal'></div>
+            <h2 class="modal-title">Заполните данные</h2>
+            <form class="js-user-data">
+                <label>
+                    <p class="form-name-input">Введите имя</p>
+                    <input class="user-input" type="text">
+                </label>
+                <label>
+                    <p class="form-name-input">Ваш Девиз</p>
+                    <input class="user-input" type="text">
+                </label>
+                <label>
+                    <p class="form-name-input">Введите число, которое хотите угадать</p>
+                    <input class="user-input" type="text">
+                </label>
+                    <button class="btn" data-action='submit' type="submit">Угадать</button>
+            </form>
+
+        </div>
+    </div>
+
+     <p class="congratulations"> </p>
+    </div>
+    <script src="main.js"></script>
 </body>
+
 </html>
