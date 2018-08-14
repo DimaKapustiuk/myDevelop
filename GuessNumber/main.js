@@ -6,8 +6,11 @@ const userInput = document.querySelectorAll('.user-input');
 const wrapperBlock = document.querySelector('.wrapper');
 const congrats = document.querySelector('.congratulations');
 const buttonWrapper = document.querySelector('.js-change-button');
+const blockInfo = document.querySelector('.js-user-info')
 let user;
 let userChange;
+let userInfo;
+
 
 openModalBtn.addEventListener('click', handleOpenModal);
 closeModalBtn.addEventListener('click', handleCloseModal);
@@ -49,14 +52,16 @@ function arrayValueInputs() {
 }
 
 function handleSubmit(evt) {
-  evt.preventDefault();
   const inputValue = arrayValueInputs();
-  user = new User(...inputValue);
+  
+  evt.preventDefault();
+  testBlockWithInfoUser();
 
+  user = new User(...inputValue);
+  
   handleCloseModal();
   paintUserObj(user);
-  console.log(user)
-  submitForm.reset();
+  submitForm.reset(); 
 }
 
 
@@ -78,18 +83,17 @@ function paintUserObj ({name, slogan, number}) {
 
     if (number !== randNumber) {
       congrats.style.color = 'red';
-     congrats.textContent = 'Сожалеем вы не угадали'
+      congrats.textContent = 'Сожалеем вы не угадали'
     } else {
       congrats.style.color = 'green';
       congrats.textContent = 'Ура ви угадали!'
     }
   
-  wrapperBlock.insertAdjacentHTML('beforeend', userInfo);
+  blockInfo.insertAdjacentHTML('afterbegin', userInfo);
   openModalBtn.textContent = 'Попробуй еще';
-
 } 
 
-function randomNumber () {
+function randomNumber() {
   const arrText = ['Орел', 'Решка']
   const number = Math.floor((Math.random() * arrText.length));
 
@@ -112,3 +116,10 @@ function userEagleORtails(event) {
 return userChange;
 }
 
+function testBlockWithInfoUser() {
+  const blockUserInfo = wrapperBlock.querySelector('.resultWrapper')
+
+if(blockUserInfo !== null){
+  blockUserInfo.remove();
+}
+}
