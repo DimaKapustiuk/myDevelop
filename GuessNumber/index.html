@@ -17,7 +17,7 @@
         <div class="modal">
         	<div class="close" data-action='close-modal'></div>
             <h2 class="modal-title">Заполните данные</h2>
-            <form class="js-user-data">
+            <form class="form js-user-data">
                 <label>
                     <p class="form-name-input">Введите имя</p>
                     <input class="user-input" type="text">
@@ -26,13 +26,14 @@
                     <p class="form-name-input">Ваш Девиз</p>
                     <input class="user-input" type="text">
                 </label>
-                <label>
-                    <p class="form-name-input">Введите Орел или Решка</p>
-                    <input class="user-input" type="text">
-                </label>
-                    <button class="btn" data-action='submit' type="submit">Угадать</button>
-            </form>
+                <div class="button-wrapper js-change-button">
+                <button class="btn" data-action='eagle' type="submit" value="Орел">Орел</button>
+                <button class="btn" data-action='tails' type="submit" value="Решка">Решка</button>
+                </div>
+               
 
+            </form>
+            
         </div>
     </div>
 

@@ -4,12 +4,16 @@ const closeModalBtn = document.querySelector('.close[data-action="close-modal"]'
 const submitForm = document.querySelector('.js-user-data');
 const userInput = document.querySelectorAll('.user-input');
 const wrapperBlock = document.querySelector('.wrapper');
-const congrats = document.querySelector('.congratulations')
+const congrats = document.querySelector('.congratulations');
+const buttonWrapper = document.querySelector('.js-change-button');
 let user;
+let userChange;
 
 openModalBtn.addEventListener('click', handleOpenModal);
 closeModalBtn.addEventListener('click', handleCloseModal);
-submitForm.addEventListener('submit', handleSubmit)
+buttonWrapper.addEventListener('click', userEagleORtails);
+submitForm.addEventListener('submit', handleSubmit);
+
 function User (name, slogan, number) {
   this.name = name;
   this.slogan = slogan;
@@ -39,10 +43,7 @@ function handleKeyCloseModal(event) {
 function arrayValueInputs() {
   const inputsObj = Array.from(userInput);
   const inputValue = inputsObj.map(input => input.value);
-  
-  if(inputValue[2] !== 'Решка' && inputValue[2] !== 'Орел') {
-    inputValue[2] = 'Орел';
-  }
+  inputValue.push(userChange);
 
   return inputValue;
 }
@@ -54,19 +55,26 @@ function handleSubmit(evt) {
 
   handleCloseModal();
   paintUserObj(user);
-
+  console.log(user)
   submitForm.reset();
 }
 
 
-function paintUserObj ({name, slogan, number}) {
-  const randNumber = randomNumber();
-  const resultText = `<div class="resultWrapper">
+
+function createTextBlock(name, slogan, number, randNumber) {
+    const resultText = `<div class="resultWrapper">
       <h3>Привет: ${name}</h3>
       <p>Ваш девиз: ${slogan}</p>
       <p>Ваш выбор: ${number}</p>
       <p>Результат: ${randNumber}</p>
     </div>`;
+
+  return resultText;
+}
+
+function paintUserObj ({name, slogan, number}) {
+  const randNumber = randomNumber();
+   userInfo = createTextBlock(name, slogan, number, randNumber);
 
     if (number !== randNumber) {
       congrats.style.color = 'red';
@@ -76,14 +84,31 @@ function paintUserObj ({name, slogan, number}) {
       congrats.textContent = 'Ура ви угадали!'
     }
   
-  wrapperBlock.insertAdjacentHTML('beforeend', resultText);
+  wrapperBlock.insertAdjacentHTML('beforeend', userInfo);
   openModalBtn.textContent = 'Попробуй еще';
-}
+
+} 
 
 function randomNumber () {
   const arrText = ['Орел', 'Решка']
   const number = Math.floor((Math.random() * arrText.length));
 
   return arrText[number];
+}
+
+function userEagleORtails(event) {
+  const target = event.target;
+  const action = target.dataset.action;
+
+  switch(action) {
+    case 'eagle':
+    userChange =  event.target.value;
+    break;
+    case 'tails':
+    userChange =  event.target.value;
+    break;
+  }
+
+return userChange;
 }
 
