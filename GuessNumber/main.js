@@ -17,51 +17,51 @@ closeModalBtn.addEventListener('click', handleCloseModal);
 buttonWrapper.addEventListener('click', userEagleORtails);
 submitForm.addEventListener('submit', handleSubmit);
 
-function User (name = "Гость", slogan = "Гости в доме, радость в мире", number) {
-  this.name = name;
-  this.slogan = slogan;
-  this.number = number;
+function User(name = "Гость", slogan = "Гости в доме, радость в мире", number) {
+    this.name = name;
+    this.slogan = slogan;
+    this.number = number;
 }
 
 function handleOpenModal() {
-  page.classList.add('show-modal');
+    page.classList.add('show-modal');
 
-  window.addEventListener('keydown', handleKeyCloseModal);
+    window.addEventListener('keydown', handleKeyCloseModal);
 }
 
 function handleCloseModal() {
-  page.classList.remove('show-modal');
+    page.classList.remove('show-modal');
 
-  window.removeEventListener('keydown', handleKeyCloseModal);
+    window.removeEventListener('keydown', handleKeyCloseModal);
 }
 
 function handleKeyCloseModal(event) {
-  const code = event.code;
+    const code = event.code;
 
-  if(code !== 'Escape') return;
+    if (code !== 'Escape') return;
 
-  handleCloseModal();
+    handleCloseModal();
 }
 
 function arrayValueInputs() {
-  const inputsObj = Array.from(userInput);
-  const inputValue = inputsObj.map(input => input.value);
-  inputValue.push(userChange);
+    const inputsObj = Array.from(userInput);
+    const inputValue = inputsObj.map(input => input.value);
+    inputValue.push(userChange);
 
-  return inputValue;
+    return inputValue;
 }
 
 function handleSubmit(evt) {
-  const inputValue = arrayValueInputs();
-  
-  evt.preventDefault();
-  testBlockWithInfoUser();
+    const inputValue = arrayValueInputs();
 
-  user = new User(...inputValue);
-  
-  handleCloseModal();
-  paintUserObj(user);
-  submitForm.reset(); 
+    evt.preventDefault();
+    testBlockWithInfoUser();
+
+    user = new User(...inputValue);
+
+    handleCloseModal();
+    paintUserObj(user);
+    submitForm.reset();
 }
 
 
@@ -74,52 +74,52 @@ function createTextBlock(name, slogan, number, randNumber) {
       <p>Результат: ${randNumber}</p>
     </div>`;
 
-  return resultText;
+    return resultText;
 }
 
-function paintUserObj ({name, slogan, number}) {
-  const randNumber = randomNumber();
-   userInfo = createTextBlock(name, slogan, number, randNumber);
+function paintUserObj({ name, slogan, number }) {
+    const randNumber = randomNumber();
+    userInfo = createTextBlock(name, slogan, number, randNumber);
 
     if (number !== randNumber) {
-      congrats.style.color = 'red';
-      congrats.textContent = 'Сожалеем вы не угадали'
+        congrats.style.color = 'red';
+        congrats.textContent = 'Сожалеем вы не угадали'
     } else {
-      congrats.style.color = 'green';
-      congrats.textContent = 'Ура ви угадали!'
+        congrats.style.color = 'green';
+        congrats.textContent = 'Ура ви угадали!'
     }
-  
-  blockInfo.insertAdjacentHTML('afterbegin', userInfo);
-  openModalBtn.textContent = 'Попробуй еще';
-} 
+
+    blockInfo.insertAdjacentHTML('afterbegin', userInfo);
+    openModalBtn.textContent = 'Попробуй еще';
+}
 
 function randomNumber() {
-  const arrText = ['Орел', 'Решка']
-  const number = Math.floor((Math.random() * arrText.length));
+    const arrText = ['Орел', 'Решка']
+    const number = Math.floor((Math.random() * arrText.length));
 
-  return arrText[number];
+    return arrText[number];
 }
 
 function userEagleORtails(event) {
-  const target = event.target;
-  const action = target.dataset.action;
+    const target = event.target;
+    const action = target.dataset.action;
 
-  switch(action) {
-    case 'eagle':
-    userChange =  event.target.value;
-    break;
-    case 'tails':
-    userChange =  event.target.value;
-    break;
-  }
+    switch (action) {
+        case 'eagle':
+            userChange = event.target.value;
+            break;
+        case 'tails':
+            userChange = event.target.value;
+            break;
+    }
 
-return userChange;
+    return userChange;
 }
 
 function testBlockWithInfoUser() {
-  const blockUserInfo = wrapperBlock.querySelector('.resultWrapper')
+    const blockUserInfo = wrapperBlock.querySelector('.resultWrapper')
 
-if(blockUserInfo !== null){
-  blockUserInfo.remove();
-}
+    if (blockUserInfo !== null) {
+        blockUserInfo.remove();
+    }
 }
