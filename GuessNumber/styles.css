@@ -39,6 +39,8 @@
     background-repeat: no-repeat;
     cursor: pointer;
     transition: transform 0.1s linear;
+    -ms-align-self: flex-end;
+    align-self: flex-end;
 
 }
 

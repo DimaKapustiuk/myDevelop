@@ -14,7 +14,7 @@ closeModalBtn.addEventListener('click', handleCloseModal);
 buttonWrapper.addEventListener('click', userEagleORtails);
 submitForm.addEventListener('submit', handleSubmit);
 
-function User (name, slogan, number) {
+function User (name = "Гость", slogan = "Гости в доме, радость в мире", number) {
   this.name = name;
   this.slogan = slogan;
   this.number = number;
