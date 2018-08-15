@@ -79,9 +79,10 @@ function handleKeyCloseModal(event) {
 
 
 function handleSubmit(evt) {
+  const change = new Change(userChange);
+  
     evt.preventDefault();
     testBlockWithInfoUser();
-    const change = new Change(userChange);
     handleCloseModal();
     paintUserObj(change);
     submitForm.reset();
