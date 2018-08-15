@@ -19,7 +19,7 @@ const clock = {
       const currentTime = Date.now();
       const time = formatTime(currentTime);
       clockface.textContent = time;
-    });
+    }, 1000);
    }                       
 }
 
