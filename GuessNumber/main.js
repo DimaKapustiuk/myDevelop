@@ -25,22 +25,11 @@ const clock = {
 
 let userChange;
 
-
-
-
-
-
-document.addEventListener('DOMContentLoaded', clock.startClock.bind(clock))
-
-
-
-
-
 openModalBtn.addEventListener('click', handleOpenModal);
 closeModalBtn.addEventListener('click', handleCloseModal);
 buttonWrapper.addEventListener('click', userEagleORtails);
 submitForm.addEventListener('submit', handleSubmit);
-
+document.addEventListener('DOMContentLoaded', clock.startClock.bind(clock))
 
 function User(name = "Гость") {
     this.name = name;
@@ -63,7 +52,7 @@ function formatTime(ms) {
   seconds = seconds < 10 ? `0${seconds}` : seconds;
 
 
-  return `${hours}:${minutes}.${seconds}`;
+  return `${hours}:${minutes}:${seconds}`;
 }
 
 
