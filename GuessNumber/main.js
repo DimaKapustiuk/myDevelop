@@ -2,14 +2,38 @@ const page = document.querySelector('.page');
 const openModalBtn = document.querySelector('button[data-action="open-modal"]');
 const closeModalBtn = document.querySelector('.close[data-action="close-modal"]');
 const submitForm = document.querySelector('.js-user-data');
-const userInput = document.querySelectorAll('.user-input');
 const wrapperBlock = document.querySelector('.wrapper');
 const congrats = document.querySelector('.congratulations');
 const buttonWrapper = document.querySelector('.js-change-button');
 const blockInfo = document.querySelector('.js-user-info')
-let user;
+const clockface = document.querySelector(".js-clockface");
+
+const clock = {
+  startTime: null, 
+  deltaTime: null,
+  id: null,
+  startClock() {
+    this.startTime = Date.now();
+    
+    this.id = setInterval(() =>{
+      const currentTime = Date.now();
+      const time = formatTime(currentTime);
+      clockface.textContent = time;
+    });
+   }                       
+}
+
 let userChange;
-let userInfo;
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', clock.startClock.bind(clock))
+
+
+
 
 
 openModalBtn.addEventListener('click', handleOpenModal);
@@ -17,11 +41,31 @@ closeModalBtn.addEventListener('click', handleCloseModal);
 buttonWrapper.addEventListener('click', userEagleORtails);
 submitForm.addEventListener('submit', handleSubmit);
 
-function User(name = "Гость", slogan = "Гости в доме, радость в мире", number) {
+
+function User(name = "Гость") {
     this.name = name;
-    this.slogan = slogan;
-    this.number = number;
 }
+
+function Change(change){
+  this.change = change;
+}
+
+function formatTime(ms) {
+  const date = new Date(ms);
+  
+  let hours = date.getHours();
+  hours = hours < 10 ? `0${hours}` : hours;
+  
+  let minutes = date.getMinutes();
+  minutes = minutes < 10 ? `0${minutes}` : minutes;
+
+  let seconds = date.getSeconds();
+  seconds = seconds < 10 ? `0${seconds}` : seconds;
+
+
+  return `${hours}:${minutes}.${seconds}`;
+}
+
 
 function handleOpenModal() {
     page.classList.add('show-modal');
@@ -43,45 +87,34 @@ function handleKeyCloseModal(event) {
     handleCloseModal();
 }
 
-function arrayValueInputs() {
-    const inputsObj = Array.from(userInput);
-    const inputValue = inputsObj.map(input => input.value);
-    inputValue.push(userChange);
 
-    return inputValue;
-}
 
 function handleSubmit(evt) {
-    const inputValue = arrayValueInputs();
-
     evt.preventDefault();
     testBlockWithInfoUser();
-
-    user = new User(...inputValue);
-
+    const change = new Change(userChange);
     handleCloseModal();
-    paintUserObj(user);
+    paintUserObj(change);
     submitForm.reset();
 }
 
 
 
-function createTextBlock(name, slogan, number, randNumber) {
+function createTextBlock( change, randNumber) {
     const resultText = `<div class="resultWrapper">
-      <h3>Привет: ${name}</h3>
-      <p>Ваш девиз: ${slogan}</p>
-      <p>Ваш выбор: ${number}</p>
-      <p>Результат: ${randNumber}</p>
+      <p>Ваш выбор: ${change}</p>
+       <p>Результат: ${randNumber}</p>
     </div>`;
 
     return resultText;
 }
 
-function paintUserObj({ name, slogan, number }) {
+function paintUserObj({change }) {
     const randNumber = randomNumber();
-    userInfo = createTextBlock(name, slogan, number, randNumber);
 
-    if (number !== randNumber) {
+    userInfo = createTextBlock(change, randNumber);
+
+    if (change !== randNumber) {
         congrats.style.color = 'red';
         congrats.textContent = 'Сожалеем вы не угадали'
     } else {

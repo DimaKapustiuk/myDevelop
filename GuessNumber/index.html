@@ -8,38 +8,31 @@
 </head>
 
 <body class="page">
+    <section class="timer">
+  <p class="clockface js-clockface">00:00.0</p>
+</section>
 	<div class="wrapper">
     <h1 class="title">Угадай Орел или Решка</h1>
     <button class="btn" data-action='open-modal'>Попробовать</button>
 
-
     <div class="backdrop">
         <div class="modal">
         	<div class="close" data-action='close-modal'></div>
-            <h2 class="modal-title">Заполните данные</h2>
+            <h2 class="modal-title">Выбери Орел или Решка</h2>
             <form class="form js-user-data">
-                <label>
-                    <p class="form-name-input">Введите имя</p>
-                    <input class="user-input" type="text">
-                </label>
-                <label>
-                    <p class="form-name-input">Ваш Девиз</p>
-                    <input class="user-input" type="text">
-                </label>
                 <div class="button-wrapper js-change-button">
                 <button class="btn" data-action='eagle' type="submit" value="Орел">Орел</button>
                 <button class="btn" data-action='tails' type="submit" value="Решка">Решка</button>
-                </div>
-               
-
-            </form>
-            
+                </div>     
+            </form>  
         </div>
     </div>
 
      <p class="congratulations"> </p>
      <div class="info js-user-info">
     </div>
+
+
     <script src="main.js"></script>
 </body>
 
