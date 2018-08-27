@@ -9,18 +9,18 @@ const blockInfo = document.querySelector('.js-user-info')
 const clockface = document.querySelector(".js-clockface");
 
 const clock = {
-  startTime: null, 
-  deltaTime: null,
-  id: null,
-  startClock() {
-    this.startTime = Date.now();
-    
-    this.id = setInterval(() =>{
-      const currentTime = Date.now();
-      const time = formatTime(currentTime);
-      clockface.textContent = time;
-    }, 1000);
-   }                       
+    startTime: null,
+    deltaTime: null,
+    id: null,
+    startClock() {
+        this.startTime = Date.now();
+
+        this.id = setInterval(() => {
+            const currentTime = Date.now();
+            const time = formatTime(currentTime);
+            clockface.textContent = time;
+        }, 1000);
+    }
 }
 
 let userChange;
@@ -35,24 +35,24 @@ function User(name = "Гость") {
     this.name = name;
 }
 
-function Change(change){
-  this.change = change;
+function Change(change) {
+    this.change = change;
 }
 
 function formatTime(ms) {
-  const date = new Date(ms);
-  
-  let hours = date.getHours();
-  hours = hours < 10 ? `0${hours}` : hours;
-  
-  let minutes = date.getMinutes();
-  minutes = minutes < 10 ? `0${minutes}` : minutes;
+    const date = new Date(ms);
 
-  let seconds = date.getSeconds();
-  seconds = seconds < 10 ? `0${seconds}` : seconds;
+    let hours = date.getHours();
+    hours = hours < 10 ? `0${hours}` : hours;
+
+    let minutes = date.getMinutes();
+    minutes = minutes < 10 ? `0${minutes}` : minutes;
+
+    let seconds = date.getSeconds();
+    seconds = seconds < 10 ? `0${seconds}` : seconds;
 
 
-  return `${hours}:${minutes}:${seconds}`;
+    return `${hours}:${minutes}:${seconds}`;
 }
 
 
@@ -79,8 +79,8 @@ function handleKeyCloseModal(event) {
 
 
 function handleSubmit(evt) {
-  const change = new Change(userChange);
-  
+    const change = new Change(userChange);
+
     evt.preventDefault();
     testBlockWithInfoUser();
     handleCloseModal();
@@ -90,7 +90,7 @@ function handleSubmit(evt) {
 
 
 
-function createTextBlock( change, randNumber) {
+function createTextBlock(change, randNumber) {
     const resultText = `<div class="resultWrapper">
       <p>Ваш выбор: ${change}</p>
        <p>Результат: ${randNumber}</p>
@@ -99,7 +99,7 @@ function createTextBlock( change, randNumber) {
     return resultText;
 }
 
-function paintUserObj({change }) {
+function paintUserObj({ change }) {
     const randNumber = randomNumber();
 
     userInfo = createTextBlock(change, randNumber);
