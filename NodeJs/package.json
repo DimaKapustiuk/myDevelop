@@ -4,15 +4,17 @@
   "description": "Test Project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "babel src -d build/js --watch"
   },
   "repository": {
     "type": "git",
-    "url": "\u0016https://github.com/DimaKapustiuk/myDevelop/NodeJs"
+    "url": "https://github.com/DimaKapustiuk/myDevelop/NodeJs"
   },
   "author": "Dima Kapustiuk",
   "license": "ISC",
-  "dependencies": {
-    "uuid": "^3.3.2"
+  "dependencies": {},
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
   }
 }
