@@ -1,0 +1,59 @@
+.login-wrapper {
+  align-items: center;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.login {
+  width: 300px;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-flow: column;
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 1px;
+  margin: 0 0 10px;
+  padding: 10px 0;
+  align-items: center;
+
+}
+
+.login__title {
+  width: 175px;
+  height: 51px;
+  background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/1200px-Instagram_logo.svg.png) no-repeat center;
+  background-size: contain;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.login__button {
+  background-color: #3897f0;
+  border: 1px solid #3897f0;
+  border-radius: 4px;
+  color: #fff;
+  position: relative;
+  padding: 5px 9px;
+  text-transform: inherit;
+  text-overflow: ellipsis;
+  width: 80%;
+  margin-bottom: 20px;
+  cursor: pointer;
+
+  &:active {
+    background-color: #3897f06b;
+    border: 1px solid #3897f06b;
+  }
+}
+.footer {
+  justify-self: center;
+  align-self: end
+}
