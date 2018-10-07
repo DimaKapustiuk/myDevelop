@@ -1,12 +1,27 @@
+header{
+  display: none;
+}
+
+header.visible {
+  display: block;
+}
 .container {
   width: 80%;
   margin: 0 auto;
   font-family: "Segoe UI"
 }
-app-user {
+
+.grid-wrapper {
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 250px 210px;
-  margin-top: 170px;
+  grid-template-rows: auto 210px;
 }
 
+.footer {
+  justify-self: center;
+  align-self: end
+}
+
+router-outlet {
+	display: none;
+}

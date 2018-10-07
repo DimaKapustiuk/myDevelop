@@ -8,6 +8,7 @@
   flex-direction: column;
   margin: 0 auto;
   text-align: center;
+  margin-top: 170px;
 }
 
 .login {
@@ -35,6 +36,7 @@
   margin: 0 auto;
   margin-bottom: 20px;
 }
+
 .login__button {
   background-color: #3897f0;
   border: 1px solid #3897f0;
@@ -47,13 +49,10 @@
   width: 80%;
   margin-bottom: 20px;
   cursor: pointer;
+}
 
-  &:active {
-    background-color: #3897f06b;
-    border: 1px solid #3897f06b;
-  }
+.login__button:active {
+  background-color: #3897f06b;
+  border: 1px solid #3897f06b;
 }
-.footer {
-  justify-self: center;
-  align-self: end
-}
+

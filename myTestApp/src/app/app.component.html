@@ -1,7 +1,10 @@
+<header [ngClass] = '{visible: _visibility}'>HEADER</header>
+<botton (click) = 'toogle()'> Toogle work </botton>
 <div class="container">
-	<app-user>
-		
-	</app-user>
+	<div class="grid-wrapper">
+		<router-outlet></router-outlet>
+			<footer class="footer"></footer>
+	</div>
 </div>
 
 

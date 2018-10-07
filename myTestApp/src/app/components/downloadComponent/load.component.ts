@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { URLservice } from '../services/loadUrl.servece'
+import { URLservice } from '../../services/loadUrl.servece'
  
 @Component({
 	selector: 'app-load',
