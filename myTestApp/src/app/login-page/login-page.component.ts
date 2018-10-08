@@ -1,22 +1,22 @@
-import { Component, OnInit, Input } from '@angular/core';
-import {AppComponent} from '../app.component'
+import { Component, OnInit,  Output, EventEmitter, Directive  } from '@angular/core';
+import {ActivatedRoute} from '@angular/router'
 
 
 @Component({
   selector: 'app-login-page',
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.css'],
-  providers: [AppComponent]
 })
-export class LoginPageComponent implements OnInit {
-	
-	  constructor(private AppComponent: AppComponent) {}
+export class LoginPageComponent {
 
-  ngOnInit() {}
+	@Output() open: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  visibleHeaderInProfile() {
-  	const result = this.AppComponent.toggle();
-  	console.log(this.AppComponent)
-  	return result;
-  }
+	  constructor() {}
+
+
+	  toggle() {
+	  	console.log("open")
+    	 return this.open.emit(true);
+   }
+ 
 }

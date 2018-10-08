@@ -7,10 +7,11 @@ import { FooterComponent } from './components/footerComponent/footer.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { RouterModule } from '@angular/router';
+import { HeaderComponent } from './components/header/header.component';
 
 
 const routes = [
-  {path: '', component:LoginPageComponent},
+  {path: '', component: LoginPageComponent},
   {path: 'dima_kapustiuk', component: ProfilePageComponent}
 ]
 
@@ -21,6 +22,7 @@ const routes = [
     FooterComponent,
     ProfilePageComponent,
     LoginPageComponent,
+    HeaderComponent,
 
   ],
   imports: [

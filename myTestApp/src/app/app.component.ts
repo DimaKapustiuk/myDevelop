@@ -1,5 +1,4 @@
-import { Component, Input } from '@angular/core';
-
+import { Component, Input, Output, EventEmitter} from '@angular/core';
 
 
 @Component({
@@ -9,14 +8,13 @@ import { Component, Input } from '@angular/core';
 })
 
 export class AppComponent {
-		_visibility: boolean = false;
-		constructor() {}
-
-		set  visibility(value) {
-			 this._visibility = value;
-		}
-
-	 toggle() {
-	 		return this._visibility = !this._visibility;
-	 } 
+// visibility: boolean;
+ constructor() {} 
+ 
+ // onOpen(value: boolean):void{
+ // 	this.visibility = value;
+ // 	console.log(this.visibility)
+ // }
+ 
 }
+		

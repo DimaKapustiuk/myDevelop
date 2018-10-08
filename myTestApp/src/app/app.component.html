@@ -1,10 +1,10 @@
-<header [ngClass] = '{visible: _visibility}'>HEADER</header>
-<button (click) = 'toggle()'> Toogle work </button>
-<div class="container">
-	<div class="grid-wrapper">
+<!-- <header class = 'header' [ngClass] = '{visible: visibility}' >HEADER</header> -->
+
+<div class="grid-wrapper">
+			<!-- <app-login-page (open) = 'onOpen($event)'> </app-login-page> -->
 		<router-outlet></router-outlet>
-			<footer class="footer"></footer>
-	</div>
+		<footer class="footer"></footer>
 </div>
+
 
 
