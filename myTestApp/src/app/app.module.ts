@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http'
 
 import { AppComponent } from './app.component';
 import { LoadComponent } from './components/downloadComponent/load.component';
@@ -8,6 +9,8 @@ import { ProfilePageComponent } from './profile-page/profile-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
+import { ProfileInfoComponent } from './profile-page/profile-info/profile-info.component';
+
 
 
 const routes = [
@@ -23,11 +26,13 @@ const routes = [
     ProfilePageComponent,
     LoginPageComponent,
     HeaderComponent,
+    ProfileInfoComponent,
 
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,10 +1,11 @@
-.container {
+.profile-info__wrapper {
+	width: 100%;
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
 	display: -o-flex;
 	display: flex;
-	flex-flow: column; 
-	width: 69.94%;
-	margin: 100px auto;
+	flex-flow: row nowrap;
+	justify-content: space-between;
+	
 }

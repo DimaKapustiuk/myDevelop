@@ -12,6 +12,9 @@ export class LoadComponent{
 	 urls = [];
 	 
 	 constructor (private URLS: URLservice) {
+	
+	}
+	ngOnInit() {
 		this.urls = this.URLS.urls;
 	}
 }
