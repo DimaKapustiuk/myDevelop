@@ -1,0 +1,18 @@
+<div class="user-image" data-id={{image.id}} imageHover>
+  <a class = "user-image__link" href="#">
+	<div class="user-image__image-wrapper">
+		<img class = 'image' src="{{image.images.low_resolution.url}}" alt="{{image.alt}}">
+		<div class="user-image__hover">
+			<div class="user-image__likes-comments">
+				<span class="icon likes"></span>
+				<span class="number">{{image.likes}}</span>
+			</div>
+			<div class="user-image__likes-comments">
+				<span class="icon comment"></span>
+				<span class="number">{{image.comments}}</span>
+			</div>
+	</div>
+	</div>
+	</a>
+</div>
+

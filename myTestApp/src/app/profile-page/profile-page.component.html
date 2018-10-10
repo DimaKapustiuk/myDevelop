@@ -1,4 +1,13 @@
-<app-header> </app-header>
+<app-header></app-header>
 <div class="container">
 	<app-profile-info [user] = "user"></app-profile-info>
+<section class="profile-images">
+	<div class="profile-images__links">
+	 <a href="#" class="images-link" active>Публикации</a>
+	 <a href="#" class="images-link">Отметки</a>
+	</div>
+	<div class="profile__images-grid">
+		<app-user-image *ngFor = "let image of images" [image] = 'image'></app-user-image>
+	</div>
+</section>
 </div>

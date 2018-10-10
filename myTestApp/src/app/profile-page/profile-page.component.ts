@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { InstagramService } from '../services/instagramService';
 
 
-
-
 @Component({
   selector: 'app-profile-page',
   templateUrl: './profile-page.component.html',
@@ -19,7 +17,10 @@ export class ProfilePageComponent implements OnInit {
   	ngOnInit() {
   		 this.InstagramService.getUser().subscribe(data => {
   		 	this.user = data;
-  		 	console.log(this.user)
+  		 	this.InstagramService.getImages().subscribe(images => {
+           this.images = images;
+           console.log(this.images)
+         })
   		 })
 
   	}

@@ -15,15 +15,17 @@
   border-bottom: 1px solid rgba(0, 0, 0, .0975);
   position: fixed;
   top: 0;
-  z-index: 1;
+  z-index: 999;
   -webkit-transition: height .2s ease-in-out;
   transition: height .2s ease-in-out;
   height: 76px;
+  background: #fff;
 }
 
 .header__container {
   width: 69.94%;
   margin: 0 auto;
+  max-width: 883.184px;
 
 }
 

@@ -1,11 +1,17 @@
+<section class="profile-info">
 <div class="profile-info__wrapper">
 	<div class="profile-info__photo">
 		<img class="profile-image" src={{user.photo}} alt="">
 	</div>
+</div>
 	<div class="profile-info__main">
 		<div class="profile-info__login">
 			<div class="profile-login">{{user.username}}</div>
-			<button class="profile-button">...</button>
+			<button class="profile-button">
+				<div class="button-point"></div>
+				<div class="button-point"></div>
+				<div class="button-point"></div>
+			</button>
 		</div>
 		<ul class="profile-info__statistic">
 			<li class="profile-info__statistic-item">
@@ -15,11 +21,11 @@
 				<span class="profile-info__value">{{user.follows}}</span> подписчики
 			</li>
 			<li class="profile-info__statistic-item">
-				Подписки 	<span class="profile-info__value">{{user.followedBy}}</span>
+				Подписки:	<span class="profile-info__value">{{user.followedBy}}</span>
 			</li>
 		</ul>
 		<div class="profile-info__name">{{user.full_name}}</div>
 		<div class="profile-info__bio">{{user.bio}}</div>
 		<div class="profile-info__web-site"><a href="@">{{user.website}}</a></div>
 	</div>
-</div>
+</section>

@@ -7,4 +7,37 @@
 	flex-flow: column; 
 	width: 69.94%;
 	margin: 100px auto;
+	max-width: 883.184px;
+}
+.profile-images {
+	margin-top: 20px;
+}
+.profile-images__links {
+	display: flex;
+  justify-content: center;
+}
+
+.images-link {
+	display: block;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #999999;
+	font-size: 12px;
+	margin-right: 62px;
+	margin-top: 15px;
+}
+.images-link:active {
+	color: #000;
+
+}
+.profile__images-grid {
+	display: grid;
+	grid-template-columns: 260px 260px 260px;
+	grid-gap: 28px;
+
+}
+.profile-images__links {
+	width: 100%;
+	border-top: 1px solid #efefef;
+	height: 52px;
 }
