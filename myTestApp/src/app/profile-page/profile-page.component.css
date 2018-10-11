@@ -1,43 +1,92 @@
 .container {
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-	flex-flow: column; 
-	width: 69.94%;
-	margin: 100px auto;
-	max-width: 883.184px;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-flow: column;
+  width: 69.94%;
+  margin: 100px auto;
+  max-width: 883.184px;
 }
+
 .profile-images {
-	margin-top: 20px;
+  margin-top: 20px;
 }
+
 .profile-images__links {
-	display: flex;
+  display: flex;
   justify-content: center;
 }
 
-.images-link {
-	display: block;
-	text-decoration: none;
-	text-transform: uppercase;
-	color: #999999;
-	font-size: 12px;
-	margin-right: 62px;
-	margin-top: 15px;
+.profile-images__links-item {
+  text-decoration: none;
 }
+
+.profile-images__link-text {
+  text-transform: uppercase;
+  color: #999999;
+  font-size: 12px;
+}
+
 .images-link:active {
-	color: #000;
+  color: #000;
 
 }
+
 .profile__images-grid {
-	display: grid;
-	grid-template-columns: 260px 260px 260px;
-	grid-gap: 28px;
+  display: grid;
+  grid-template-columns: 260px 260px 260px;
+  grid-gap: 28px;
 
 }
+
 .profile-images__links {
-	width: 100%;
-	border-top: 1px solid #efefef;
-	height: 52px;
+  width: 100%;
+  border-top: 1px solid #efefef;
+  height: 52px;
 }
+
+.profile-images__links-item {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: center;
+  -ms-align-items: center;
+  align-items: center;
+  margin-right: 15px;
+}
+.link-wrapper {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: center;
+  -ms-align-items: center;
+  align-items: center;
+}
+
+.public-icon {
+  background: url('../../assets/fa9f36710aa4.png') 0 5px no-repeat;
+  height: 12px;
+  width: 12px;
+  margin-right: 5px;
+}
+
+.public-icon.publisher {
+  background-position: -425px -407px;
+}
+
+.public-icon.marks {
+  background-position: -411px -407px;
+}
+.profile-images__links-item.active .profile-images__link-text  {
+  color: #000000; 
+}
+.profile-images__links-item.active{
+  border-top: 1px solid #000000;
+}
+

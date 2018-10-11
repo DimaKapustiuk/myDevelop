@@ -10,8 +10,9 @@ import { LoginPageComponent } from './login-page/login-page.component';
 import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { ProfileInfoComponent } from './profile-page/profile-info/profile-info.component';
-import { UserImageComponent } from './components/user-image/user-image.component';
+import { UserImageComponent } from './profile-page/user-image/user-image.component';
 import { ImageHover } from './imageHover.directive';
+import { ModalSettingsComponent } from './profile-page/modal-settings/modal-settings.component';
 
 
 
@@ -32,6 +33,7 @@ const routes = [
     ProfileInfoComponent,
     UserImageComponent,
     ImageHover,
+    ModalSettingsComponent,
 
   ],
   imports: [

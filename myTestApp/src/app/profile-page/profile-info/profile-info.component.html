@@ -7,7 +7,8 @@
 	<div class="profile-info__main">
 		<div class="profile-info__login">
 			<div class="profile-login">{{user.username}}</div>
-			<button class="profile-button">
+			<app-modal-settings *ngIf="isModalDialogVisible" (isConfirmed)="closeModal($event)"> </app-modal-settings>
+			<button class="profile-button" (click) = "showDialog()">
 				<div class="button-point"></div>
 				<div class="button-point"></div>
 				<div class="button-point"></div>

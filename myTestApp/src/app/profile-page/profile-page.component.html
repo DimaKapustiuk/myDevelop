@@ -1,13 +1,24 @@
 <app-header></app-header>
 <div class="container">
-	<app-profile-info [user] = "user"></app-profile-info>
-<section class="profile-images">
-	<div class="profile-images__links">
-	 <a href="#" class="images-link" active>Публикации</a>
-	 <a href="#" class="images-link">Отметки</a>
-	</div>
-	<div class="profile__images-grid">
-		<app-user-image *ngFor = "let image of images" [image] = 'image'></app-user-image>
-	</div>
-</section>
+  <app-profile-info [user]="user"></app-profile-info>
+  <section class="profile-images">
+    <div class="profile-images__links">
+      <a href="#" class="profile-images__links-item active" active>
+      	<span class="link-wrapper"> 
+        <div class="public-icon publisher"></div>
+        <div class="profile-images__link-text">Публикации</div>
+        </span>
+      </a>
+      <a href="#" class="profile-images__links-item ">
+      	<span class="link-wrapper"> 
+        	<div class="public-icon marks"></div>
+        	<div class="profile-images__link-text">Отметки</div>
+        	</span>
+      </a>
+      
+    </div>
+    <div class="profile__images-grid">
+      <app-user-image *ngFor="let image of images" [image]='image'></app-user-image>
+    </div>
+  </section>
 </div>

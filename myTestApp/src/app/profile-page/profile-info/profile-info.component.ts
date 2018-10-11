@@ -7,7 +7,16 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ProfileInfoComponent implements OnInit {
 @Input() user;
+private isModalDialogVisible: boolean = false;
   constructor() { }
+
+	public showDialog() {
+		this.isModalDialogVisible = true;
+	}
+
+	public closeModal(isConfirmed: boolean) {
+		this.isModalDialogVisible = false;
+	}
 
   ngOnInit() {
   }
