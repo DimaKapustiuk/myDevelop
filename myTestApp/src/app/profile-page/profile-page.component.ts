@@ -9,8 +9,8 @@ import { InstagramService } from '../services/instagramService';
   providers: [InstagramService]
 })
 export class ProfilePageComponent implements OnInit {
-	user = {};
-	images = [];
+	private user = {};
+	private images = [];
 
 	  constructor(private InstagramService: InstagramService) { }
 
@@ -18,9 +18,10 @@ export class ProfilePageComponent implements OnInit {
   		  this.InstagramService.getUser().subscribe(data => {
   		 	  this.user = data;
        });
+
   		 	this.InstagramService.getImages().subscribe(images => {
           this.images = images;
-         })
-  		 }
-  	}
+        });
+   }
 }
+
