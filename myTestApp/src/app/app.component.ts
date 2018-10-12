@@ -8,13 +8,9 @@ import { Component, Input, Output, EventEmitter} from '@angular/core';
 })
 
 export class AppComponent {
-// visibility: boolean;
+
  constructor() {} 
  
- // onOpen(value: boolean):void{
- // 	this.visibility = value;
- // 	console.log(this.visibility)
- // }
- 
+
 }
 		

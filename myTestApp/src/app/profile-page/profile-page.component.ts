@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { InstagramService } from '../services/instagramService';
 
 
@@ -15,13 +15,12 @@ export class ProfilePageComponent implements OnInit {
 	  constructor(private InstagramService: InstagramService) { }
 
   	ngOnInit() {
-  		 this.InstagramService.getUser().subscribe(data => {
-  		 	this.user = data;
+  		  this.InstagramService.getUser().subscribe(data => {
+  		 	  this.user = data;
+       });
   		 	this.InstagramService.getImages().subscribe(images => {
-           this.images = images;
-           console.log(this.images)
+          this.images = images;
          })
-  		 })
-
+  		 }
   	}
 }

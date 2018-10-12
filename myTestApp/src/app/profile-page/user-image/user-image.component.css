@@ -59,10 +59,15 @@
   width: 19px;
   position: absolute;
   left: -25px;
+  
 }
 
 .icon.comment {
   background: url(../../../assets/fa9f36710aa4.png);
   background-repeat: no-repeat;
   background-position: -192px -407px;
+  height: 19px;
+  width: 19px;
+  position: absolute;
+  left: -25px;
 }
