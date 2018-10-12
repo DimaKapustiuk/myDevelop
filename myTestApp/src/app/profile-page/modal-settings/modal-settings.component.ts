@@ -11,10 +11,10 @@ export class ModalSettingsComponent {
 
  constructor() { }
 
-	private confirm() {
+	confirm() {
 		this.isConfirmed.emit(true);
 	}
-	private close() {
+	 close() {
 		this.isConfirmed.emit(false);
 	}
 

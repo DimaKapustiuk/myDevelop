@@ -9,8 +9,8 @@ import { InstagramService } from '../services/instagramService';
   providers: [InstagramService]
 })
 export class ProfilePageComponent implements OnInit {
-	private user = {};
-	private images = [];
+	public user = {};
+	public images = [];
 
 	  constructor(private InstagramService: InstagramService) { }
 

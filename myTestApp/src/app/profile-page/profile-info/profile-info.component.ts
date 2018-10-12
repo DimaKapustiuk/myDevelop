@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ProfileInfoComponent implements OnInit {
 @Input() user;
-private isModalDialogVisible: boolean = false;
+public isModalDialogVisible: boolean = false;
   constructor() { }
 
 	public showDialog() {
