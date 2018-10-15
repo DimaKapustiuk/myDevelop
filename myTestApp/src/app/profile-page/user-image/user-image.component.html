@@ -1,5 +1,6 @@
 <div class="user-image" data-id={{image.id}} imageHover>
-  <a class = "user-image__link" href="#">
+	<app-modal-images *ngIf = 'isModalImageVisible' (isConfirmed) = "closeModal($event)"> </app-modal-images>
+  <a class = "user-image__link" routerLink = 'image/{{image.id}}' (click) = "showModal()">
 	<div class="user-image__image-wrapper">
 		<img class = 'image' src="{{image.images.low_resolution.url}}" alt="{{image.alt}}">
 		<div class="user-image__hover">

@@ -9,14 +9,6 @@ import {ActivatedRoute} from '@angular/router'
 })
 export class LoginPageComponent {
 
-	@Output() open: EventEmitter<boolean> = new EventEmitter<boolean>();
-
 	  constructor() {}
-
-
-	  toggle() {
-	  	console.log("open")
-    	 return this.open.emit(true);
-   }
  
 }

@@ -27,7 +27,7 @@ export class InstagramService {
 					}))
 	}
 
-		getUser() {
+	getUser() {
 		return this.http.get("https://api.instagram.com/v1/users/self/?access_token=4791253071.52ed645.dd337b49a4cd46dbbdf044d2b256dae2")
 					.pipe(map(response => response.json()))
 					.pipe(map(obj => obj.data))

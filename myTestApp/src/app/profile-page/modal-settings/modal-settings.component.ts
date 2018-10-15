@@ -6,7 +6,6 @@ import { Component, OnInit, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./modal-settings.component.css']
 })
 export class ModalSettingsComponent {
-
  @Output() isConfirmed: EventEmitter<boolean> = new EventEmitter<boolean>();
 
  constructor() { }

@@ -7,7 +7,16 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class UserImageComponent implements OnInit {
  @Input() image;
+  public isModalImageVisible: boolean = false;
+
   constructor() { }
+
+	public closeModal(isConfirmed: boolean) {
+		this.isModalImageVisible = false;
+	}
+	public showModal() {
+		this.isModalImageVisible = true
+	}
 
   ngOnInit() {
   }

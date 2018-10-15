@@ -1,0 +1,26 @@
+.backdrop {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.close-modal {
+  background: url('../../../assets/cancel-music.png') no-repeat center;
+  background-size: cover;
+  width: 12px;
+  height: 12px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  -ms-align-self: flex-start;
+  align-self: flex-start;
+  position: absolute;
+  right: 50px;
+  top: 30px;
+}
