@@ -21,6 +21,8 @@ export class InstagramService {
 								alt: obj.caption.text,
 								likes: obj.likes.count,
 								comments: obj.comments.count,
+								user: obj.user,
+								location: obj.location,
 							}
 						})
 						

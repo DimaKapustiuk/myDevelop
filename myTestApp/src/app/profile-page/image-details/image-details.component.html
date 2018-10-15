@@ -6,11 +6,11 @@
 	<div class="modal-details__comments">
 		<div class="modal_details__wrapper">
 			<a class="modal-details__link" routerLink = 'dima_kapustiuk'>
-			<img  class="modal-details__photo" src={{userImage.images.standard_resolution.url}} alt="">
+			<img  class="modal-details__photo" src={{userImage.user.profile_picture}} alt="">
 		</a>
 		<div class="modal-details__user-info">
-			<p class="modal-details__name">Name</p>
-			<p class="modal-details__location">Kazatin</p>
+			<p class="modal-details__name">{{userImage.user.username}}</p>
+			<p class="modal-details__location">{{userImage.location.name}}</p>
 		</div>
 		</div>
 		

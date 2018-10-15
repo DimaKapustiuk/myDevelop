@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { UserImageComponent } from '../user-image/user-image.component'
+import { UserImageComponent } from '../user-image/user-image.component';
+
 
 @Component({
   selector: 'app-image-details',
