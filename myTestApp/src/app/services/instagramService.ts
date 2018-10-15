@@ -14,7 +14,6 @@ export class InstagramService {
 					.pipe(map(obj => obj.data))
 					.pipe(map(array => {
 						return array.map(obj => {
-							console.log(obj)
 							return {
 								id: obj.id,
 								images: obj.images,
@@ -24,8 +23,7 @@ export class InstagramService {
 								user: obj.user,
 								location: obj.location,
 							}
-						})
-						
+						})	
 					}))
 	}
 
