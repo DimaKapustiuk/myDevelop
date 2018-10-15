@@ -15,6 +15,7 @@ import { ImageHover } from './imageHover.directive';
 import { ModalSettingsComponent } from './profile-page/modal-settings/modal-settings.component';
 import { ModalImagesComponent } from './profile-page/modal-images/modal-images.component';
 import { ImageDetailsComponent } from './profile-page/image-details/image-details.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 
@@ -32,6 +33,7 @@ import { ImageDetailsComponent } from './profile-page/image-details/image-detail
     ModalSettingsComponent,
     ModalImagesComponent,
     ImageDetailsComponent,
+    PageNotFoundComponent,
 
   ],
   imports: [
