@@ -9,9 +9,8 @@
   grid-template-columns: 100%;
   grid-template-rows: auto 210px;
 }
-
-.footer {
-  justify-self: center;
+app-footer {
+   justify-self: center;
   align-self: end
 }
 

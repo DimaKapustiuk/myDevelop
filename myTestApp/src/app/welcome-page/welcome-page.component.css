@@ -1,0 +1,27 @@
+.welcome-user {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: center;
+	-ms-align-items: center;
+	align-items: center;
+	flex-direction: column;
+	max-width: 930px;
+	margin: 0 auto;
+	height: 50vh;
+}
+.welcome-user__button {
+	width: 50%;
+	background-color: #3897f0;
+  border: 1px solid #3897f0;
+  border-radius: 4px;
+  color: #fff;
+  position: relative;
+  padding: 5px 9px;
+  text-transform: inherit;
+  text-overflow: ellipsis;
+  margin-bottom: 20px;
+  cursor: pointer;
+}

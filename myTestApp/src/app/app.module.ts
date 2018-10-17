@@ -16,6 +16,7 @@ import { ModalSettingsComponent } from './profile-page/modal-settings/modal-sett
 import { ModalImagesComponent } from './profile-page/modal-images/modal-images.component';
 import { ImageDetailsComponent } from './profile-page/image-details/image-details.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 
 
 
@@ -34,6 +35,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ModalImagesComponent,
     ImageDetailsComponent,
     PageNotFoundComponent,
+    WelcomePageComponent,
 
   ],
   imports: [

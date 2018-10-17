@@ -1,34 +1,47 @@
 import { Http } from '@angular/http';
-import { Injectable } from '@angular/core';
+import { Injectable, Component } from '@angular/core';
 import { throwError  } from 'rxjs';
 import { map, catchError} from 'rxjs/operators';
 
+
+
 @Injectable()
+
+
 export class InstagramService {
+
+	private urls = {
+		images: 'https://api.instagram.com/v1/users/self/media/recent/',
+		user: 'https://api.instagram.com/v1/users/self/',
+	}
+
+	private accessToken = JSON.parse(localStorage.getItem('token'));
 	
-	constructor(private http: Http) {}
+	constructor(private http: Http) {
+
+	}
 
 		getImages() {
-		return this.http.get("https://api.instagram.com/v1/users/self/media/recent/?access_token=4791253071.52ed645.dd337b49a4cd46dbbdf044d2b256dae2")
+		return this.http.get(`${this.urls.images}?${this.accessToken}`)
 					.pipe(map(response => response.json()))
-					.pipe(map(obj => obj.data))
+					.pipe(map(obj => obj.data ))
 					.pipe(map(array => {
 						return array.map(obj => {
 							return {
 								id: obj.id,
 								images: obj.images,
-								alt: obj.caption.text,
+								alt: obj.user.text || 'Images Alt',
 								likes: obj.likes.count,
 								comments: obj.comments.count,
 								user: obj.user,
-								location: obj.location,
+								location: obj.location ||  "",
 							}
 						})	
-					}))
+					}))		
 	}
 
 	getUser() {
-		return this.http.get("https://api.instagram.com/v1/users/self/?access_token=4791253071.52ed645.dd337b49a4cd46dbbdf044d2b256dae2")
+		return this.http.get(`${this.urls.user}?${this.accessToken}`)
 					.pipe(map(response => response.json()))
 					.pipe(map(obj => obj.data))
 					.pipe(map(obj => {

@@ -55,4 +55,10 @@
   background-color: #3897f06b;
   border: 1px solid #3897f06b;
 }
-
+.login__link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: #fff;
+}

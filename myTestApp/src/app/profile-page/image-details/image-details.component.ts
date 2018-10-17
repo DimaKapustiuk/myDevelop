@@ -5,14 +5,16 @@ import { UserImageComponent } from '../user-image/user-image.component';
 @Component({
   selector: 'app-image-details',
   templateUrl: './image-details.component.html',
-  styleUrls: ['./image-details.component.css']
+  styleUrls: ['./image-details.component.css'],
+ 
 })
 export class ImageDetailsComponent implements OnInit {
- 	userImage = {};
-  userInfo = {};
-  constructor(private Image: UserImageComponent) {}
+ 	private userImage: Object = {};
+ 
+  constructor(private Image: UserImageComponent) {
+  	this.userImage = this.Image.image;
+  }
 
   ngOnInit() {
-  	 this.userImage = this.Image.image;
   }
 }
