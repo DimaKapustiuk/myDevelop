@@ -41,6 +41,10 @@
   margin-bottom: 20px;
   cursor: pointer;
 }
+.welcome-user__button:active {
+  background-color: #3897f06b;
+  border: 1px solid #3897f06b;
+}
 .welcome-user__photo {
   width: 152px;
   height: 152px;

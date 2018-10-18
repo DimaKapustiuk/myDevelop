@@ -13,6 +13,9 @@
 
 .login {
   width: 300px;
+  height: 110px;
+  max-width: 400px;
+  max-height: 170px;
   display: -webkit-flex;
   display: -moz-flex;
   display: -ms-flex;
@@ -36,6 +39,13 @@
   margin: 0 auto;
   margin-bottom: 20px;
 }
+.login__link {
+  display: block;
+  width: 240px;
+  height: 25px;
+  text-decoration: none;
+  color: #fff;
+}
 
 .login__button {
   background-color: #3897f0;
@@ -46,8 +56,7 @@
   padding: 5px 9px;
   text-transform: inherit;
   text-overflow: ellipsis;
-  width: 80%;
-  margin-bottom: 20px;
+  width: 100%;
   cursor: pointer;
 }
 
@@ -55,10 +64,4 @@
   background-color: #3897f06b;
   border: 1px solid #3897f06b;
 }
-.login__link {
-  display: block;
-  width: 100%;
-  height: 100%;
-  text-decoration: none;
-  color: #fff;
-}
+
