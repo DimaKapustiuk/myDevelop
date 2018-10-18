@@ -10,12 +10,12 @@ import { map, catchError} from 'rxjs/operators';
 
 export class InstagramService {
 
-	private urls = {
+	public urls = {
 		images: 'https://api.instagram.com/v1/users/self/media/recent/',
 		user: 'https://api.instagram.com/v1/users/self/',
 	}
 
-	private accessToken = JSON.parse(localStorage.getItem('token'));
+	public accessToken = JSON.parse(localStorage.getItem('token'));
 	
 	constructor(private http: Http) {
 

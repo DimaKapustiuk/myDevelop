@@ -14,22 +14,27 @@ export class WelcomePageComponent implements OnInit {
  private accessToken: string;
  private welcomeHash : string;
  private user: Object;
+ private visible: boolean = false;
 
-  constructor(private http: Http, private Instagram: InstagramService) {
-  this.initUser(this.accessToken).subscribe(data => this.user = data)
-  	
 
-  }
+  constructor(private http: Http, private Instagram: InstagramService) {}
 
   ngOnInit() {
-  	this.welcomeHash = window.location.hash;
-  	this.accessToken = this.welcomeHash.slice(1);
-		
-  	localStorage.setItem('token', JSON.stringify(this.accessToken));
+    this.takeAccessTokenFromTheUrl()
   }
   
   ngAfterViewInit() {
-  	this.initUser(this.accessToken).subscribe(data => console.log(data))
+  	this.initUser(this.accessToken).subscribe(data => {
+			this.user = data;
+			this.visible = true;
+		})
+  }
+
+  takeAccessTokenFromTheUrl() {
+  	this.welcomeHash = window.location.hash;
+  	this.accessToken = this.welcomeHash.slice(1);
+  	localStorage.setItem('token', JSON.stringify(this.accessToken));
+  	window.location.hash = "";
   }
 
   initUser(token) {
@@ -37,5 +42,4 @@ export class WelcomePageComponent implements OnInit {
     .pipe(map(response => response.json()))
     .pipe(map(obj => obj.data))
   }
-  
 }

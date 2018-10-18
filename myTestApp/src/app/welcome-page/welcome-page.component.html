@@ -1,6 +1,13 @@
 <div class="welcome-user">
 	<p class="welcome-user__text">
-		Добро пожаловать в приложение! {{user.full_name}} 
+		Добро пожаловать в приложение!
 	</p>
-	<button class="welcome-user__button" routerLink = '/user'>Продолжить</button>
+	<div class="welcome-user__info" *ngIf = "visible">
+		<div class="welcome-user__photo">
+			<img class="user-image" src={{user.profile_picture}} alt="user-photo">
+		</div>
+		<button class="welcome-user__button" routerLink = '/user'>Продолжить как {{user.full_name}}</button>
+	</div>
+	<button class="welcome-user__button welcome-user__button-cancel" routerLink = '/login'>Отмена</button>
+	
 </div>
